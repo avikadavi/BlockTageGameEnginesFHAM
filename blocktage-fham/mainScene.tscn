@@ -1,3 +1,25 @@
 [gd_scene format=3 uid="uid://cmoqux2yvtbns"]
 
-[node name="Node3D" type="Node3D" unique_id=313455585]
+[ext_resource type="Script" uid="uid://dpegeua71heqq" path="res://baumgenerator.gd" id="1_iwpey"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4qto"]
+albedo_color = Color(0.23137255, 0.4627451, 0.26666668, 1)
+
+[node name="Main_Level" type="Node3D" unique_id=1742925096]
+
+[node name="LevelObjects" type="Node3D" parent="." unique_id=472973134]
+
+[node name="Boden" type="CSGBox3D" parent="LevelObjects" unique_id=993262385]
+size = Vector3(50, 0.2, 50)
+material = SubResource("StandardMaterial3D_g4qto")
+
+[node name="Baumgenerator" type="Node3D" parent="LevelObjects" unique_id=1908018735]
+script = ExtResource("1_iwpey")
+countTrees = 0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1684979200]
+transform = Transform3D(0.91406834, -0.33189017, -0.23308352, 0.018228501, -0.54051805, 0.84113497, -0.40515023, -0.7731037, -0.4880206, 0, 18.753439, -16.471191)
+light_energy = 3.851
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1570840057]
+transform = Transform3D(1, 0, 0, 0, 0.3830059, 0.9237459, 0, -0.9237459, 0.3830059, -7.5118637, 57.8983, 28.725779)

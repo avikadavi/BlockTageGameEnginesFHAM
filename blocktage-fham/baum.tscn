@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d2ojegrcgy68s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4po73"]
+albedo_color = Color(0.34677193, 0.2255418, 0.109588526, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j43qt"]
+albedo_color = Color(0.2875652, 0.46556598, 0.25229168, 1)
+
+[node name="Baum" type="Node3D" unique_id=559156847]
+
+[node name="Baumstanm" type="CSGCylinder3D" parent="." unique_id=253111767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0559393, 0)
+radius = 0.298
+material = SubResource("StandardMaterial3D_4po73")
+
+[node name="Baumkrone" type="CSGSphere3D" parent="." unique_id=2007341028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8073196, 0)
+radius = 1.0
+material = SubResource("StandardMaterial3D_j43qt")
