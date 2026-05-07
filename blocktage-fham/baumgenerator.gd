@@ -10,7 +10,7 @@ func _ready() -> void:
 	print(offSet)
 	print("--------------")
 	for i in range(sizeGround.x / 10):
-		for j in range(sizeGround.z /10 ):
+		for j in range(sizeGround.z / 10 ):
 			var newTree = treeTemplate.instantiate()
 			var Randompos = Vector3(randi_range(2,8), 0, randi_range(2,8)) + offSet
 			newTree.position = Randompos
