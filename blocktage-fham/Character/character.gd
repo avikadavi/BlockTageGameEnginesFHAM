@@ -1,39 +1,48 @@
 extends CharacterBody3D
 
-
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+const ROTATION_SPEED = 3.0
 
-
-
+func _ready() -> void:
+	position = $"../Startposition".position
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		$AnimationPlayer.play("fall");
-	
-		
-		
+		$AnimationPlayer.play("fall")
 
-	# Handle jump.
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("move_right", "move_left", "move_backward", "move_forward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	# A / D rotieren den Player
+	var turn_input := Input.get_axis("move_right", "move_left")
+	rotate_y(turn_input * ROTATION_SPEED * delta)
+
+	# W / S bewegen vor/zurück relativ zur Player-Rotation
+	var move_input := Input.get_axis("move_forward", "move_backward")
+	var direction := -transform.basis.z * move_input
+
+	if direction != Vector3.ZERO:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		
-	if(direction != Vector3.ZERO):
+
+	if direction != Vector3.ZERO and is_on_floor():
 		$AnimationPlayer.play("walk")
 	elif is_on_floor():
 		$AnimationPlayer.play("idle")
-
+		
+	if CheckIfDead():
+		position = $"../Startposition".position
+	
 	move_and_slide()
+
+	
+func CheckIfDead() -> bool:
+	if position.y < -1:
+		print("Spieler ist Tot")
+		return true
+	return false
