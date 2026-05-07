@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://buw43f7sajoba"]
+
+[ext_resource type="PackedScene" uid="uid://cffbvm5ylipna" path="res://Models/GLB format/block-grass-hexagon.glb" id="1_3272w"]
+[ext_resource type="Texture2D" uid="uid://cm8hs3ld1150c" path="res://Models/GLB format/Textures/colormap.png" id="2_rsuc6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieb06"]
+albedo_texture = ExtResource("2_rsuc6")
+
+[node name="block-grass-hexagon2" unique_id=225693941 instance=ExtResource("1_3272w")]
+
+[node name="block-grass-hexagon" parent="." index="0" unique_id=1338599667]
+surface_material_override/0 = SubResource("StandardMaterial3D_ieb06")

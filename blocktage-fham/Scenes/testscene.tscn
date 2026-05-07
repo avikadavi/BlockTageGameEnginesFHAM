@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bbh7a2ewpdt1s"]
+
+[ext_resource type="PackedScene" uid="uid://ii6kyo0yp8cv" path="res://Character/Character.tscn" id="1_r2sr7"]
+[ext_resource type="PackedScene" uid="uid://br14an4qqfsrb" path="res://GameObjects/hex_block.tscn" id="2_wni78"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wni78"]
+size = Vector3(10.360153, 0.21569824, 6.005005)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r2sr7"]
+
+[node name="Testscene" type="Node3D" unique_id=380885839]
+
+[node name="HexBlock2" parent="." unique_id=367328363 instance=ExtResource("2_wni78")]
+transform = Transform3D(1.31, 0, 0, 0, 1.31, 0, 0, 0, 1.31, 3.6210823, 0, 0.5306926)
+
+[node name="HexBlock" parent="." unique_id=1297431894 instance=ExtResource("2_wni78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9053864, -0.5, 1.2443345)
+
+[node name="Character" parent="." unique_id=1244708788 instance=ExtResource("1_r2sr7")]
+
+[node name="Camera3D" type="Camera3D" parent="Character" unique_id=44501765]
+transform = Transform3D(-1, 0, -8.7422784e-08, -3.8287965e-08, 0.8989929, 0.43796325, 7.859246e-08, 0.43796325, -0.8989929, 0, 1.6962969, -1.8315473)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=558906809]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=39505383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00011789799, -0.6078491, 0.013537645)
+shape = SubResource("BoxShape3D_wni78")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1739658532]
+transform = Transform3D(5.1769767, 0, 0, 0, 1, 0, 0, 0, 2.9891489, 0, -0.5, 0)
+mesh = SubResource("PlaneMesh_r2sr7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1296545825]
+transform = Transform3D(1, 0, 0, 0, 0.6815898, 0.73173445, 0, -0.73173445, 0.6815898, 0, 1.9651376, 0)

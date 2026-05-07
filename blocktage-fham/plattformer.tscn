@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dc7jgsx3bx5q7"]
+
+[ext_resource type="PackedScene" uid="uid://cpxur74ekdibh" path="res://Models/GLB format/arrow.glb" id="1_1sbp7"]
+[ext_resource type="PackedScene" uid="uid://d237mnexhmw3x" path="res://Models/GLB format/block-grass-corner-low.glb" id="2_5bman"]
+[ext_resource type="PackedScene" uid="uid://cffbvm5ylipna" path="res://Models/GLB format/block-grass-hexagon.glb" id="3_slqql"]
+[ext_resource type="PackedScene" uid="uid://buw43f7sajoba" path="res://GameObjects/block_grass_hexagon_2.tscn" id="4_oy6hy"]
+[ext_resource type="PackedScene" uid="uid://ii6kyo0yp8cv" path="res://Character/Character.tscn" id="5_5bman"]
+
+[node name="Plattformer" type="Node3D" unique_id=532305247]
+
+[node name="arrow2" parent="." unique_id=1655059301 instance=ExtResource("1_1sbp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.39)
+
+[node name="block-grass-corner-low2" parent="." unique_id=924604372 instance=ExtResource("2_5bman")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="block-grass-hexagon2" parent="." unique_id=225693941 instance=ExtResource("3_slqql")]
+
+[node name="block-grass-hexagon3" parent="." unique_id=57908396 instance=ExtResource("4_oy6hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="block-grass-hexagon4" parent="." unique_id=611370366 instance=ExtResource("4_oy6hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=519306155]
+transform = Transform3D(1, 0, 0, 0, 0.7601679, 0.6497267, 0, -0.6497267, 0.7601679, 0, 4.897496, 0)
+light_energy = 1.945
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=805396470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3600941, 3.2717528)
+
+[node name="Node3D" parent="." unique_id=1244708788 instance=ExtResource("5_5bman")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4804137, 0)
