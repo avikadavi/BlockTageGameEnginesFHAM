@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dstf3he35tmbj"]
+
+[ext_resource type="Script" uid="uid://vir1b6t41lw0" path="res://GameObjects/user_interface_jump_run.gd" id="1_4c1ie"]
+
+[node name="UserInterfaceJumpRun" type="Control" unique_id=1352148255]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4c1ie")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=1807998782]
+layout_mode = 0
+offset_right = 1931.0
+offset_bottom = 1077.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=491287122]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 63.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1533088165]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "Coins Collected:"
+
+[node name="Label2" type="Label" parent="HBoxContainer" unique_id=1984579130]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "4"
+
+[node name="LabelTimer" type="Label" parent="." unique_id=125883840]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -523.0
+offset_bottom = 119.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+
+[node name="Button" type="Button" parent="." unique_id=845170357]
+layout_mode = 0
+offset_left = 1552.0
+offset_top = 918.0
+offset_right = 1928.0
+offset_bottom = 1066.0
+theme_override_font_sizes/font_size = 60
+text = "Restart"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=397081182]
+layout_mode = 0
+offset_left = 1807.0
+offset_top = 19.0
+offset_right = 1900.0
+offset_bottom = 625.0
+fill_mode = 3

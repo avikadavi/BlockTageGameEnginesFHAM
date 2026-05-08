@@ -5,23 +5,28 @@
 [ext_resource type="PackedScene" uid="uid://br14an4qqfsrb" path="res://GameObjects/hex_block.tscn" id="2_wni78"]
 [ext_resource type="PackedScene" uid="uid://bvdwv5de1rtf7" path="res://GameObjects/coin.tscn" id="3_nes3m"]
 [ext_resource type="AudioStream" uid="uid://c6lbjt6vpl5um" path="res://Sounds/sound-effects-library-coin.mp3" id="5_0pdfm"]
+[ext_resource type="PackedScene" uid="uid://bc2kb2psihx7u" path="res://GameObjects/simple_ramp.tscn" id="5_ggkdx"]
+[ext_resource type="PackedScene" uid="uid://dbv7tsoogabxl" path="res://GameObjects/high_block_grass.tscn" id="7_3hk28"]
+[ext_resource type="PackedScene" uid="uid://d1wy6ff8na6r2" path="res://GameObjects/hexafield_snow.tscn" id="8_g0og0"]
+[ext_resource type="PackedScene" uid="uid://dstf3he35tmbj" path="res://GameObjects/user_interface_jump_run.tscn" id="9_ni8gw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wni78"]
 size = Vector3(10.360153, 0.21569824, 6.005005)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_r2sr7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vy56e"]
+albedo_color = Color(0.11926574, 0.3928475, 0.09431524, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nes3m"]
-size = Vector3(10.404297, 8.78717, 0.6248169)
+[sub_resource type="PlaneMesh" id="PlaneMesh_r2sr7"]
+material = SubResource("StandardMaterial3D_vy56e")
 
 [node name="Testscene" type="Node3D" unique_id=380885839]
 script = ExtResource("1_vy56e")
 
 [node name="HexBlock2" parent="." unique_id=367328363 instance=ExtResource("2_wni78")]
-transform = Transform3D(1.31, 0, 0, 0, 1.31, 0, 0, 0, 1.31, 3.6210823, 0, 0.5306926)
+transform = Transform3D(1.31, 0, 0, 0, 2.6205688, 0, 0, 0, 1.31, 4.817092, -0.36989725, 0.5306926)
 
 [node name="HexBlock" parent="." unique_id=1297431894 instance=ExtResource("2_wni78")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9053864, -0.5, 1.2443345)
+transform = Transform3D(2, 0, 0, 0, 1.6064658, 0, 0, 0, 2, 2.2828202, -0.37116075, 1.2443345)
 
 [node name="Character" parent="." unique_id=1244708788 instance=ExtResource("1_r2sr7")]
 
@@ -29,47 +34,67 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9053864, -0.5, 1.2443345)
 transform = Transform3D(-1, 0, -8.7422784e-08, -3.8287965e-08, 0.8989929, 0.43796325, 7.859246e-08, 0.43796325, -0.8989929, 0, 1.6962969, -1.8315473)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=558906809]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=39505383]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00011789799, -0.6078491, 0.013537645)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00011789799, -0.2382184, 0.013537645)
 shape = SubResource("BoxShape3D_wni78")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1739658532]
-transform = Transform3D(5.1769767, 0, 0, 0, 1, 0, 0, 0, 2.9891489, 0, -0.5, 0)
+transform = Transform3D(5.176976, 0, 0, 0, 0.9999999, 0, 0, 0, 2.9891489, 0, -0.13879395, 0)
 mesh = SubResource("PlaneMesh_r2sr7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1296545825]
 transform = Transform3D(1, 0, 0, 0, 0.6815898, 0.73173445, 0, -0.73173445, 0.6815898, 0, 1.9651376, 0)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=88531155]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=782320013]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009765625, 3.8935852, 2.9218445)
-shape = SubResource("BoxShape3D_nes3m")
-
 [node name="Startposition" type="Marker3D" parent="." unique_id=1325874791]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9225674, 0.4599719, 0.494704)
-
-[node name="Coin7" parent="." unique_id=843926562 instance=ExtResource("3_nes3m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.597343, 2, 0.8085213)
-
-[node name="Coin" parent="." unique_id=1713764278 instance=ExtResource("3_nes3m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6044495, -0.5, -1.0305188)
-
-[node name="Coin2" parent="." unique_id=975043503 instance=ExtResource("3_nes3m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-
-[node name="Coin3" parent="." unique_id=967523451 instance=ExtResource("3_nes3m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
-
-[node name="Coin4" parent="." unique_id=1669174450 instance=ExtResource("3_nes3m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1)
-
-[node name="Coin5" parent="." unique_id=1201551117 instance=ExtResource("3_nes3m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
-
-[node name="Coin6" parent="." unique_id=1652559774 instance=ExtResource("3_nes3m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.169108, -0.50000024, -0.106500864)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.147642, 0.4599719, 0.494704)
 
 [node name="CoinCollectedSound" type="AudioStreamPlayer3D" parent="." unique_id=83752270]
 stream = ExtResource("5_0pdfm")
+
+[node name="simpleRamp" parent="." unique_id=1720529616 instance=ExtResource("5_ggkdx")]
+transform = Transform3D(0.016824123, 0, -0.99985844, 0, 1.7323076, 0, 0.99985844, 0, 0.016824123, 0.5171404, -0.8031856, 1.4175453)
+
+[node name="Coin" parent="." unique_id=843926562 instance=ExtResource("3_nes3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10523308, 0.28803468, 1.4845222)
+
+[node name="Coin2" parent="." unique_id=453168156 instance=ExtResource("3_nes3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2936099, 1.2666016, 1.2739887)
+
+[node name="Coin3" parent="." unique_id=1304716823 instance=ExtResource("3_nes3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.872753, 2.5951967, 0.54008615)
+
+[node name="HexBlock3" parent="." unique_id=315896246 instance=ExtResource("2_wni78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.075865, -0.39123535, -1.847985)
+
+[node name="HexBlock4" parent="." unique_id=819626297 instance=ExtResource("2_wni78")]
+transform = Transform3D(1, 0, 0, 0, 3.7246842, 0, 0, 0, 1, 5.062044, -0.39123535, -1.2752924)
+
+[node name="HighBlockGrass" parent="." unique_id=639403951 instance=ExtResource("7_3hk28")]
+transform = Transform3D(1.7582502, 0, 0, 0, 2.3852441, 0, 0, 0, 1.337378, 5.089694, -0.37314522, -3.5502214)
+
+[node name="Coin4" parent="." unique_id=2037730608 instance=ExtResource("3_nes3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2201385, 3.7069433, -1.202275)
+
+[node name="Coin5" parent="." unique_id=1261642584 instance=ExtResource("3_nes3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1347656, 4.9037924, -3.0958986)
+
+[node name="Coin6" parent="." unique_id=1905374214 instance=ExtResource("3_nes3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.038229, 4.9037924, -3.0958986)
+
+[node name="Coin7" parent="." unique_id=1760874937 instance=ExtResource("3_nes3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.038229, 4.9037924, -4.339289)
+
+[node name="Coin8" parent="." unique_id=1018338051 instance=ExtResource("3_nes3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96591, 4.9037924, -4.339289)
+
+[node name="HexafieldSnow" parent="." unique_id=1831416488 instance=ExtResource("8_g0og0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.989815, 0, 3.085216)
+
+[node name="UserInterfaceJumpRun" parent="." unique_id=1352148255 instance=ExtResource("9_ni8gw")]
+
+[node name="Timer" type="Timer" parent="." unique_id=711920995]
+wait_time = 0.009999999999999998
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

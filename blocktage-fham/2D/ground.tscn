@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dgqdji5j4dx1o"]
+
+[ext_resource type="Texture2D" uid="uid://cikjf3tbx6pa0" path="res://2D/kenney_new-platformer-pack-1/Sprites/Tiles/Default/block_blue.png" id="1_6gobl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(2115, 59)
+
+[node name="Ground" type="StaticBody2D" unique_id=1333564993]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1229205823]
+position = Vector2(989, 1045)
+scale = Vector2(33.046875, 1)
+texture = ExtResource("1_6gobl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646280653]
+position = Vector2(988.5, 1044.5)
+shape = SubResource("RectangleShape2D_epypp")

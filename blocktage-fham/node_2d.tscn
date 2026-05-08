@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://c1evnv1qltcs4"]
+
+[ext_resource type="PackedScene" uid="uid://b7k6jln4rmdv4" path="res://Player2D.tscn" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://dgqdji5j4dx1o" path="res://2D/ground.tscn" id="2_epypp"]
+[ext_resource type="PackedScene" uid="uid://hhd4i6u8nifk" path="res://2D/blue_block.tscn" id="3_epypp"]
+[ext_resource type="PackedScene" uid="uid://ioj56qxc340b" path="res://2D/Coin.tscn" id="4_0hol4"]
+
+[node name="Node2D" type="Node2D" unique_id=234954228]
+
+[node name="CharacterBody2D" parent="." unique_id=1246180584 instance=ExtResource("1_wtcfe")]
+position = Vector2(661, 946)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=350139300]
+zoom = Vector2(2, 2)
+
+[node name="Ground" parent="." unique_id=1333564993 instance=ExtResource("2_epypp")]
+
+[node name="BlueBlock" parent="." unique_id=963690783 instance=ExtResource("3_epypp")]
+position = Vector2(1157, 979)
+
+[node name="BlueBlock2" parent="." unique_id=1991267145 instance=ExtResource("3_epypp")]
+position = Vector2(1218, 916)
+
+[node name="BlueBlock3" parent="." unique_id=1152650735 instance=ExtResource("3_epypp")]
+position = Vector2(1220, 979)
+
+[node name="BlueBlock4" parent="." unique_id=982572901 instance=ExtResource("3_epypp")]
+position = Vector2(1218, 854)
+
+[node name="BlueBlock5" parent="." unique_id=322772270 instance=ExtResource("3_epypp")]
+position = Vector2(1284, 979)
+
+[node name="BlueBlock6" parent="." unique_id=1653612355 instance=ExtResource("3_epypp")]
+position = Vector2(1284, 854)
+
+[node name="BlueBlock7" parent="." unique_id=1039007361 instance=ExtResource("3_epypp")]
+position = Vector2(1284, 916)
+
+[node name="BlueBlock8" parent="." unique_id=1572458230 instance=ExtResource("3_epypp")]
+position = Vector2(1157, 916)
+
+[node name="BlueBlock9" parent="." unique_id=257538209 instance=ExtResource("3_epypp")]
+position = Vector2(1095, 979)
+
+[node name="Area2D" parent="." unique_id=576657649 instance=ExtResource("4_0hol4")]
+
+[node name="Coin" parent="." unique_id=261045181 instance=ExtResource("4_0hol4")]
+position = Vector2(1089, 914)
+
+[node name="Coin2" parent="." unique_id=478859099 instance=ExtResource("4_0hol4")]
+position = Vector2(1152, 850)
+
+[node name="Coin3" parent="." unique_id=276286962 instance=ExtResource("4_0hol4")]
+position = Vector2(1226, 794)

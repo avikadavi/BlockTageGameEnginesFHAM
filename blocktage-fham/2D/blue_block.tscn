@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://hhd4i6u8nifk"]
+
+[ext_resource type="Texture2D" uid="uid://cikjf3tbx6pa0" path="res://2D/kenney_new-platformer-pack-1/Sprites/Tiles/Default/block_blue.png" id="1_bslav"]
+
+[node name="BlueBlock" type="StaticBody2D" unique_id=963690783]
+
+[node name="BlockBlue" type="Sprite2D" parent="." unique_id=822817669]
+texture = ExtResource("1_bslav")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=350238102]
+polygon = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)

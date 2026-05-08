@@ -19,7 +19,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	rotate_y(delta * randi_range(1,3) * rotationspeed)
 	
-	CoinsUpAndDown(delta)
+	#CoinsUpAndDown(delta)
 	#ScaleCoins(delta)
 	
 func ScaleCoins(delta) -> void:
@@ -53,6 +53,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		queue_free()
 
 func FireCoinCollected() -> void:
-	CoinCollectedSignal.emit()
+	CoinCollectedSignal.emit(self)
+
 
 	
