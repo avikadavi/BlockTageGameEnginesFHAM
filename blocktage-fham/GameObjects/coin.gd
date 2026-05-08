@@ -6,24 +6,22 @@ extends Node3D
 var up := true
 var bigger := true
 
-var Collected := false
+var collected := false
+
+signal CoinCollectedSignal
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	add_to_group("Coin")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	rotate_y(delta * randi_range(1,3) * rotationspeed)
 	
-	#CoinsUpAndDown(delta)
+	CoinsUpAndDown(delta)
 	#ScaleCoins(delta)
 	
-	
-	
-	
-
 func ScaleCoins(delta) -> void:
 	
 	if bigger:
@@ -31,7 +29,7 @@ func ScaleCoins(delta) -> void:
 	else:
 		scale -= Vector3(0.3, 0.3, 0.3) * delta
 		
-	if scale.length() > 4:
+	if scale.length() > 3:
 		bigger = false
 	elif scale.length() < 1:
 		bigger = true
@@ -46,16 +44,15 @@ func CoinsUpAndDown(delta) -> void:
 	if position.y > 2:
 		up = false
 		
-	if position.y < 1:
+	if position.y < 0:
 		up = true
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if !Collected:
-		print("Coin Collected")
-		await $AudioStreamPlayer3D.play()
-		await get_tree().create_timer(0.8).timeout
+	if(body.is_in_group("Player")):
+		FireCoinCollected()
 		queue_free()
-	if !Collected:
-		Collected = true
+
+func FireCoinCollected() -> void:
+	CoinCollectedSignal.emit()
 
 	

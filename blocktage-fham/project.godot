@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 project/assembly_name="BlocktageFham"
 
+[global_group]
+
+Player=""
+Spieler=""
+Coin=""
+
 [input]
 
 move_forward={
