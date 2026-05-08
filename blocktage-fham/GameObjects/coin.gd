@@ -28,14 +28,11 @@ func ScaleCoins(delta) -> void:
 	else:
 		scale -= Vector3(0.3, 0.3, 0.3) * delta
 		
-	if scale.length() > 10:
+	if scale.length() > 4:
 		bigger = false
 	elif scale.length() < 1:
 		bigger = true
 		
-	
-	
-
 func CoinsUpAndDown(delta) -> void:
 	
 	if up and position.y < 2:
