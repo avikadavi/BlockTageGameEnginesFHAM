@@ -2,8 +2,11 @@ extends Node3D
 
 @export var rotationspeed := 1.0
 
+
 var up := true
 var bigger := true
+
+var Collected := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +18,7 @@ func _process(delta: float) -> void:
 	rotate_y(delta * randi_range(1,3) * rotationspeed)
 	
 	#CoinsUpAndDown(delta)
-	ScaleCoins(delta)
+	#ScaleCoins(delta)
 	
 	
 	
@@ -47,5 +50,12 @@ func CoinsUpAndDown(delta) -> void:
 		up = true
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("Coin Collected")
-	queue_free()
+	if !Collected:
+		print("Coin Collected")
+		await $AudioStreamPlayer3D.play()
+		await get_tree().create_timer(0.8).timeout
+		queue_free()
+	if !Collected:
+		Collected = true
+
+	
