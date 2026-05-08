@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmoqux2yvtbns"]
 
-[ext_resource type="Script" uid="uid://dpegeua71heqq" path="res://baumgenerator.gd" id="1_iwpey"]
-[ext_resource type="Script" uid="uid://f8dx2fx4q8x" path="res://camera_3d.gd" id="2_g4qto"]
+[ext_resource type="Script" uid="uid://dpegeua71heqq" path="res://Scenes/baumgenerator.gd" id="1_iwpey"]
+[ext_resource type="Script" uid="uid://f8dx2fx4q8x" path="res://Scenes/camera_3d.gd" id="2_g4qto"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4qto"]
 albedo_color = Color(0.23137255, 0.4627451, 0.26666668, 1)
